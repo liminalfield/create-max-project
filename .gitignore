@@ -1,0 +1,72 @@
+# -------------------------
+# OS-specific
+# -------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# -------------------------
+# WebStorm / JetBrains IDEs
+# -------------------------
+.idea/
+*.iml
+
+# -------------------------
+# Node.js / TypeScript
+# -------------------------
+node_modules/
+dist/
+build/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env
+.env.*
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional: coverage/test reports
+coverage/
+*.lcov
+
+# -------------------------
+# Max/MSP / Max for Live
+# -------------------------
+
+# Max backup files (autosave)
+*.maxbak
+*.maxbackup
+*.maxpat.autosave
+
+# Max's analysis and undo history files (rare, but possible)
+*.max~analysis
+*.maxundo
+
+# Max compiled externals (if built locally)
+*.mxo
+*.mxe
+*.mxe64
+*.mx64
+
+# General patch clutter
+max-project-droneflow/code/*.js.map  # if you're debugging, include this only if you want source maps
+max-project-droneflow/code/*.ts      # only if your code folder is used for JS runtime
+
+# Max audio render output (if rendering audio files from Max)
+*.aif
+*.aiff
+*.wav
+
+# -------------------------
+# Git / misc
+# -------------------------
+*.log
+*.swp
+*.tmp
+*.bak
+*.old
+*.orig
