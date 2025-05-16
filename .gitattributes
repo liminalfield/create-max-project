@@ -1,0 +1,18 @@
+# Ensure consistent LF line endings
+* text=auto eol=lf
+
+# Treat JS, JSON, TS, and config files as text (with LF endings)
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+
+# Don't normalize images or binaries (just in case later)
+*.png binary
+*.jpg binary
+*.gif binary
+*.zip binary
+
+# Ensure .gitattributes itself has LF endings
+.gitattributes text eol=lf
