@@ -1,0 +1,11 @@
+{
+  "name": "max-dev-ts",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc && node scripts/copy-to-max.js",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
