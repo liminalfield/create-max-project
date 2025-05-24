@@ -8,14 +8,15 @@ A CLI tool to scaffold Max and Max for Live development environments using JavaS
 
 - Interactive CLI: select language and project type
 - Four ready-to-use templates:
-    - TypeScript Library (`typescript-lib-only`)
-    - JavaScript Library (`javascript-lib-only`)
-    - Full TypeScript Max Project (`typescript-full-project`)
-    - Full JavaScript Max Project (`javascript-full-project`)
+  - TypeScript Library (`typescript-lib-only`)
+  - JavaScript Library (`javascript-lib-only`)
+  - Full TypeScript Max Project (`typescript-full-project`)
+  - Full JavaScript Max Project (`javascript-full-project`)
 - Auto-generates `dev/` and `max-project/` structure
 - Runs `npm install` automatically if a `dev/package.json` is found
 - Optional Git initialization with `.gitignore` and `.gitattributes`
 - Supports automatic file copying to Max `code/` folders after build
+- Includes starter type definitions for Max scripting (`types/max.d.ts`)
 
 ---
 
@@ -53,6 +54,11 @@ You will be prompted to:
 
 Each project is scaffolded under a new top-level folder using your chosen project name (e.g., `my-max-thing/`).
 
+If you choose to initialize Git during setup, the project will also include:
+
+- `.gitignore` – pre-filled with standard entries for JS/TS, Max projects, and IDEs (e.g., `node_modules`, `dist`, `.idea`, `.vscode`, `.env`, etc.)
+- `.gitattributes` – enforces consistent line endings and text treatment across platforms, especially useful for Max patchers and scripting files.
+
 ---
 
 ### 1. `typescript-lib-only`
@@ -65,6 +71,8 @@ my-project/
 │   ├── dist/
 │   ├── tsconfig.json
 │   ├── package.json
+│   └── types/
+│       └── max.d.ts
 └── copy.config.json
 ```
 
@@ -116,9 +124,11 @@ my-project/
 │   ├── package.json
 │   ├── scripts/
 │   │   └── copy-to-max.js
+│   ├── types/
+│   │   └── max.d.ts
 │   └── copy.config.json
 ├── max-project/
-│   └── code/   ← built JS files will be copied here after build
+│   └── code/
 ```
 
 **Use case**: Full Max for Live or Max device with TypeScript-based JS scripting.
@@ -128,7 +138,7 @@ my-project/
 ```bash
 cd my-project/dev
 npm install
-npm run build  # builds and copies output to ../max-project/code/
+npm run build
 ```
 
 You can configure which files get copied by editing `copy.config.json`:
@@ -172,9 +182,7 @@ npm run build
 
 ---
 
-## ⚙️ Customizing `copy.config.json`
-
-This file controls how your compiled JavaScript files are deployed into your Max project:
+## Customizing `copy.config.json`
 
 ```json
 {
@@ -189,12 +197,25 @@ This file controls how your compiled JavaScript files are deployed into your Max
 
 ---
 
+## TypeScript and Max Integration
+
+TypeScript templates include a `types/max.d.ts` file that provides basic type declarations for Max’s JS scripting environment and a partial interface for LiveAPI. This helps with:
+
+- Autocomplete and hinting in editors like VS Code or WebStorm
+- Type safety for Max's global JS functions
+- Basic support for LOM scripting in TypeScript
+
+You can expand `max.d.ts` over time as your Max scripting grows.
+
+---
+
 ## Roadmap Ideas
 
 - Support for esbuild or Vite as alternative bundlers
 - Optional `.copyignore` support
 - Auto-import scaffolds for JS libraries
 - Glob or pattern-based copying (e.g. `**/*.js`)
+- Full LOM type coverage
 
 ---
 

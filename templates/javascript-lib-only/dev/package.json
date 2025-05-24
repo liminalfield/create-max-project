@@ -1,7 +1,0 @@
-{
-  "name": "max-lib-js",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "echo 'Nothing to build yet'"
-  }
-}

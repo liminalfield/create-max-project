@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
-    "rootDir": "./src",
-    "outDir": "./dist",
+    "module": "esnext",
     "strict": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "typeRoots": ["./types", "./node_modules/@types"],
     "esModuleInterop": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "types/**/*"]
 }

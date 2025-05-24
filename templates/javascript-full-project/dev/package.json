@@ -1,7 +1,0 @@
-{
-  "name": "max-dev-js",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "node scripts/copy-to-max.js"
-  }
-}

@@ -11,7 +11,7 @@ console.log('\ncreate-max-project\n');
 const {
   projectName,
   mode,
-  language,
+  language = "typescript",
   meta,
   initGit
 } = await askUserInputs();
